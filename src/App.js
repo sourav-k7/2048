@@ -1,9 +1,10 @@
-import logo from './logo.svg';
-
+import React from 'react'
 function App() {
   return (
     <div> 
-    2048
+      <h1>2048</h1>
+    <h3>socre</h3>
+    <div>Board</div>
     </div>
   );
 }
