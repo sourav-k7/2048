@@ -1,5 +1,6 @@
 import React, { Component,Fragment } from 'react';
 import Board from '../../component/Board/Board'
+import Scoreboard from '../../component/scoreboard/scoreboard';
 import emptyBoard from '../../utility/emptyboard';
 
 class BoardControl extends Component {
@@ -22,17 +23,22 @@ class BoardControl extends Component {
 		super(props);
 		this.state = {
 			Board:this.addNumber(emptyBoard()),
-			test:0
+			score:0,
+			best:0,
 		}
 	}
 	componentDidMount(){
-		
+		this.setState({Board:this.addNumber(this.state.Board)});
+	}
+	
+	newGame = ()=>{
+		this.setState({Board:this.addNumber(this.addNumber(emptyBoard()))})
 	}
 	render() { 
 		return (
 	<Fragment> 
 	        <h1>2048</h1>
-    	        <h3>score,restart</h3>
+		<Scoreboard score={this.state.score} best={this.state.best} clicked={this.newGame} />
 		<Board board={this.state.Board} />
     	</Fragment> 
     );
