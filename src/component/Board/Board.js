@@ -6,7 +6,7 @@ import _uniqueId from 'lodash/uniqueId';
 const board = (props) =>{
 	return(
 
-	<div className={classes.Board}>
+	<div className={classes.Board} >
 		{
 			props.board.map((row)=>{
 				return row.map((value)=>

@@ -3,8 +3,8 @@ import classes from './scoreboard.module.css'
 const scoreboard = (props) => {
 	return ( 
 		<center className={classes.Scoreboard}>
-			<span>Score: 0</span>
-			<span>Best: 0</span>
+			<span>Score: {props.score}</span>
+			<span>Best: {props.best}</span>
 			<div onClick={props.clicked}>New Game</div>
 		</center>
 	 );
